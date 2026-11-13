@@ -22,6 +22,8 @@ echo [2/5] Syncing full website to root and removing legacy files...
 if exist "middleware.ts" del /f /q "middleware.ts"
 if exist "utils" rmdir /s /q "utils"
 copy /y "RAGAV_BUILDERS_Scroll_Prototype\index.html" "index.html"
+copy /y "RAGAV_BUILDERS_Scroll_Prototype\sitemap.xml" "sitemap.xml"
+copy /y "RAGAV_BUILDERS_Scroll_Prototype\robots.txt" "robots.txt"
 
 echo [3/5] Initializing Git repository...
 if not exist ".git" (
@@ -38,7 +40,7 @@ git branch -M main
 
 echo [5/5] Staging all files and pushing live to GitHub...
 git add -A
-git commit -m "Deploy: Configure Vercel outputDirectory to RAGAV_BUILDERS_Scroll_Prototype"
+git commit -m "SEO: Add Google Search Console assets, sitemap.xml, robots.txt, Schema.org LocalBusiness, FAQ section & keyword optimizations"
 echo.
 git push -u origin main --force
 

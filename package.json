@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "Ragav Builders - Full-Page Cinematic Architectural Website",
   "main": "RAGAV_BUILDERS_Scroll_Prototype/index.html",
-  "dependencies": {
-    "@supabase/ssr": "^0.5.2",
-    "@supabase/supabase-js": "^2.48.1"
-  },
   "scripts": {
     "build": "echo Ready",
     "sync": "node sync.js",
