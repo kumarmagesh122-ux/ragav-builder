@@ -8,6 +8,7 @@
     "@supabase/supabase-js": "^2.48.1"
   },
   "scripts": {
+    "build": "echo Ready",
     "sync": "node sync.js",
     "prestart": "node sync.js",
     "predev": "node sync.js",

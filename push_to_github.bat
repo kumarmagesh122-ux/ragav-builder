@@ -38,7 +38,7 @@ git branch -M main
 
 echo [5/5] Staging all files and pushing live to GitHub...
 git add -A
-git commit -m "Fix 404: Sync main website to root and configure clean Vercel asset routes"
+git commit -m "Deploy: Configure Vercel outputDirectory to RAGAV_BUILDERS_Scroll_Prototype"
 echo.
 git push -u origin main --force
 

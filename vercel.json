@@ -1,8 +1,5 @@
 {
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/", "destination": "/index.html" },
-    { "source": "/assets/(.*)", "destination": "/RAGAV_BUILDERS_Scroll_Prototype/assets/$1" },
-    { "source": "/images/(.*)", "destination": "/RAGAV_BUILDERS_Scroll_Prototype/images/$1" }
-  ]
+  "buildCommand": "echo Ready",
+  "outputDirectory": "RAGAV_BUILDERS_Scroll_Prototype",
+  "cleanUrls": true
 }
