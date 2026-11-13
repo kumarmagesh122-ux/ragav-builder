@@ -18,7 +18,11 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-echo [2/5] Initializing Git repository...
+echo [2/5] Cleaning legacy Next.js files...
+if exist "middleware.ts" del /f /q "middleware.ts"
+if exist "utils" rmdir /s /q "utils"
+
+echo [3/5] Initializing Git repository...
 if not exist ".git" (
     git init
     echo Repository initialized.
@@ -26,29 +30,27 @@ if not exist ".git" (
     echo Repository already initialized.
 )
 
-echo [3/5] Configuring remote origin to kumarmagesh122-ux/ragav-builder...
+echo [4/5] Configuring remote origin to kumarmagesh122-ux/ragav-builder...
 git remote remove origin 2>nul
 git remote add origin https://github.com/kumarmagesh122-ux/ragav-builder.git
 git branch -M main
 
-echo [4/5] Staging required deployment files and creating commit...
+echo [5/5] Staging files and pushing fix to GitHub...
 git add -A
-git commit -m "Deploy Ragav Builders project with Supabase and WhatsApp enquiry system"
-
-echo [5/5] Pushing to GitHub (main branch)...
+git commit -m "Fix Vercel build: Remove unused Next.js middleware and configure static site"
 echo.
 git push -u origin main --force
 
 if %errorlevel% equ 0 (
     echo.
     echo ========================================================
-    echo   SUCCESS! All files pushed to GitHub successfully!
+    echo   SUCCESS! Vercel build fix pushed to GitHub!
     echo   View repo: https://github.com/kumarmagesh122-ux/ragav-builder
     echo ========================================================
 ) else (
     echo.
     echo ========================================================
-    echo   Push encountered an authentication or network check.
+    echo   Push encountered an authentication check.
     echo   Please verify your GitHub credentials in the prompt.
     echo ========================================================
 )

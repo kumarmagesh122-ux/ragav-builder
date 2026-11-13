@@ -1,4 +1,5 @@
 {
+  "framework": null,
   "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/RAGAV_BUILDERS_Scroll_Prototype/index.html" },

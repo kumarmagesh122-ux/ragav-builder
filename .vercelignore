@@ -1,0 +1,4 @@
+middleware.ts
+utils/
+.env.local
+.git
