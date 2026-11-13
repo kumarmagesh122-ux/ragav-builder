@@ -18,9 +18,10 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-echo [2/5] Cleaning legacy Next.js files...
+echo [2/5] Syncing full website to root and removing legacy files...
 if exist "middleware.ts" del /f /q "middleware.ts"
 if exist "utils" rmdir /s /q "utils"
+copy /y "RAGAV_BUILDERS_Scroll_Prototype\index.html" "index.html"
 
 echo [3/5] Initializing Git repository...
 if not exist ".git" (
@@ -35,16 +36,16 @@ git remote remove origin 2>nul
 git remote add origin https://github.com/kumarmagesh122-ux/ragav-builder.git
 git branch -M main
 
-echo [5/5] Staging files and pushing fix to GitHub...
+echo [5/5] Staging all files and pushing live to GitHub...
 git add -A
-git commit -m "Fix Vercel build: Remove unused Next.js middleware and configure static site"
+git commit -m "Fix 404: Sync main website to root and configure clean Vercel asset routes"
 echo.
 git push -u origin main --force
 
 if %errorlevel% equ 0 (
     echo.
     echo ========================================================
-    echo   SUCCESS! Vercel build fix pushed to GitHub!
+    echo   SUCCESS! Website and Vercel fix pushed to GitHub!
     echo   View repo: https://github.com/kumarmagesh122-ux/ragav-builder
     echo ========================================================
 ) else (
