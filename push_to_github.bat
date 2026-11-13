@@ -3,7 +3,7 @@ title Push Ragav Builders to GitHub
 color 0b
 echo ========================================================
 echo   RAGAV BUILDERS - PUSH PROJECT TO GITHUB REPOSITORY
-echo   Target: https://github.com/Magesh13-ms/Ragav-builder.git
+echo   Target: https://github.com/kumarmagesh122-ux/ragav-builder.git
 echo ========================================================
 echo.
 
@@ -26,9 +26,9 @@ if not exist ".git" (
     echo Repository already initialized.
 )
 
-echo [3/5] Configuring remote origin...
+echo [3/5] Configuring remote origin to kumarmagesh122-ux/ragav-builder...
 git remote remove origin 2>nul
-git remote add origin https://github.com/Magesh13-ms/Ragav-builder.git
+git remote add origin https://github.com/kumarmagesh122-ux/ragav-builder.git
 git branch -M main
 
 echo [4/5] Staging required deployment files and creating commit...
@@ -37,19 +37,19 @@ git commit -m "Deploy Ragav Builders project with Supabase and WhatsApp enquiry 
 
 echo [5/5] Pushing to GitHub (main branch)...
 echo.
-git push -u origin main
+git push -u origin main --force
 
 if %errorlevel% equ 0 (
     echo.
     echo ========================================================
     echo   SUCCESS! All files pushed to GitHub successfully!
-    echo   View repo: https://github.com/Magesh13-ms/Ragav-builder
+    echo   View repo: https://github.com/kumarmagesh122-ux/ragav-builder
     echo ========================================================
 ) else (
     echo.
     echo ========================================================
-    echo   If GitHub requires force overwrite for initial commit:
-    echo   git push -u origin main --force
+    echo   Push encountered an authentication or network check.
+    echo   Please verify your GitHub credentials in the prompt.
     echo ========================================================
 )
 
