@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <!-- Dark Architectural Ambient Gradients -->
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#020810" stop-opacity="0.95"/>
+      <stop offset="60%" stop-color="#041220" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#061321" stop-opacity="1"/>
+    </linearGradient>
+
+    <!-- Warm Glowing Interior Windows -->
+    <linearGradient id="warmInteriorGlow" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb" stop-opacity="0.95"/>
+      <stop offset="35%" stop-color="#fde68a" stop-opacity="0.85"/>
+      <stop offset="70%" stop-color="#f59e0b" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#b45309" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <linearGradient id="warmInteriorAmber" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#f97316" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#7c2d12" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <!-- Contemporary Concrete & Cladding -->
+    <linearGradient id="facadeConcrete" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0e2238"/>
+      <stop offset="50%" stop-color="#142c46"/>
+      <stop offset="100%" stop-color="#0a1a2c"/>
+    </linearGradient>
+
+    <linearGradient id="woodPanels" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#451a03"/>
+      <stop offset="50%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#270e02"/>
+    </linearGradient>
+
+    <!-- Architectural Downlights / Spotlights -->
+    <radialGradient id="downlightCone" cx="50%" cy="0%" r="90%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#f59e0b" stop-opacity="0.3"/>
+      <stop offset="80%" stop-color="#d97706" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#061321" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Soft Diffuse Lighting Filter -->
+    <filter id="softGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="bloomWide" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="35"/>
+    </filter>
+  </defs>
+
+  <!-- Ambient Night Sky Backdrop -->
+  <rect width="1200" height="675" fill="url(#skyGrad)"/>
+
+  <!-- Background Ambience & Distant Silhouette Trees -->
+  <path d="M 400 480 Q 430 400 470 420 Q 520 370 560 410 Q 610 350 670 400 Q 730 360 800 430 L 800 480 Z" fill="#030b14" opacity="0.6"/>
+  <path d="M 850 480 Q 890 380 940 390 Q 980 340 1030 380 Q 1090 320 1150 370 L 1200 370 L 1200 480 Z" fill="#030b14" opacity="0.7"/>
+
+  <!-- Upper Story Main Cantilevered Block -->
+  <g>
+    <!-- Roof Slab Extrusion -->
+    <polygon points="520,110 1160,80 1180,95 510,125" fill="#1c3654" stroke="#2a4a70" stroke-width="1.5"/>
+    <!-- Soffit Downlight Underside -->
+    <polygon points="510,125 1180,95 1170,115 510,140" fill="#0c1d2e"/>
+    <!-- Soffit Recessed Downlights -->
+    <circle cx="580" cy="132" r="3.5" fill="#fef08a"/>
+    <circle cx="680" cy="126" r="3.5" fill="#fef08a"/>
+    <circle cx="800" cy="118" r="3.5" fill="#fef08a"/>
+    <circle cx="940" cy="108" r="3.5" fill="#fef08a"/>
+    <circle cx="1060" cy="98" r="3.5" fill="#fef08a"/>
+
+    <!-- Light Cones from Soffit -->
+    <polygon points="575,135 540,240 620,240" fill="url(#downlightCone)" opacity="0.6"/>
+    <polygon points="675,129 635,235 725,235" fill="url(#downlightCone)" opacity="0.6"/>
+    <polygon points="795,121 750,230 850,230" fill="url(#downlightCone)" opacity="0.6"/>
+    <polygon points="935,111 885,225 995,225" fill="url(#downlightCone)" opacity="0.6"/>
+
+    <!-- Upper Floor Glass Facade -->
+    <rect x="540" y="140" width="320" height="150" fill="url(#warmInteriorGlow)" filter="url(#softGlow)"/>
+    <rect x="880" y="125" width="260" height="155" fill="url(#warmInteriorAmber)" filter="url(#softGlow)"/>
+
+    <!-- Architectural Window Mullions & Framing -->
+    <rect x="535" y="138" width="6" height="154" fill="#091827"/>
+    <rect x="620" y="133" width="5" height="159" fill="#091827"/>
+    <rect x="705" y="128" width="5" height="164" fill="#091827"/>
+    <rect x="790" y="123" width="5" height="169" fill="#091827"/>
+    <rect x="860" y="118" width="8" height="174" fill="#091827"/>
+    <rect x="950" y="113" width="5" height="170" fill="#091827"/>
+    <rect x="1040" y="108" width="5" height="175" fill="#091827"/>
+    <rect x="1140" y="103" width="6" height="180" fill="#091827"/>
+
+    <path d="M 690 145 L 720 145 L 705 180 Z" fill="#fffbeb" opacity="0.9" filter="url(#softGlow)"/>
+    <circle cx="705" cy="185" r="7" fill="#fde68a" filter="url(#softGlow)"/>
+    <rect x="545" y="142" width="22" height="148" fill="#1e293b" opacity="0.65"/>
+    <rect x="835" y="125" width="24" height="165" fill="#1e293b" opacity="0.65"/>
+
+    <!-- Vertical Timber Accent Slat Feature Wall on Right -->
+    <rect x="1150" y="105" width="45" height="185" fill="url(#woodPanels)"/>
+    <line x1="1160" y1="105" x2="1160" y2="290" stroke="#000" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1170" y1="104" x2="1170" y2="290" stroke="#000" stroke-width="1.5" opacity="0.5"/>
+    <line x1="1180" y1="103" x2="1180" y2="290" stroke="#000" stroke-width="1.5" opacity="0.5"/>
+
+    <!-- Cantilevered Upper Terrace Glass Balustrade -->
+    <rect x="500" y="270" width="660" height="34" fill="rgba(39, 197, 245, 0.12)" stroke="rgba(255, 255, 255, 0.28)" stroke-width="1"/>
+    <line x1="500" y1="270" x2="1160" y2="245" stroke="rgba(255, 255, 255, 0.45)" stroke-width="1.5"/>
+    <line x1="560" y1="270" x2="560" y2="304" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+    <line x1="680" y1="265" x2="680" y2="300" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+    <line x1="820" y1="258" x2="820" y2="295" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+    <line x1="980" y1="252" x2="980" y2="290" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+    <line x1="1120" y1="246" x2="1120" y2="285" stroke="rgba(255, 255, 255, 0.3)" stroke-width="2"/>
+  </g>
+
+  <!-- Mid-Floor Slab -->
+  <polygon points="460,305 1180,270 1195,295 450,330" fill="url(#facadeConcrete)" stroke="#223e5e" stroke-width="1.2"/>
+
+  <!-- Ground Floor Living Pavilions & Garden Terrace -->
+  <g>
+    <circle cx="530" cy="336" r="3" fill="#fef08a"/>
+    <circle cx="650" cy="330" r="3" fill="#fef08a"/>
+    <circle cx="780" cy="323" r="3" fill="#fef08a"/>
+    <circle cx="920" cy="316" r="3" fill="#fef08a"/>
+    <circle cx="1050" cy="308" r="3" fill="#fef08a"/>
+
+    <polygon points="525,339 490,460 580,460" fill="url(#downlightCone)" opacity="0.65"/>
+    <polygon points="645,333 605,460 705,460" fill="url(#downlightCone)" opacity="0.65"/>
+    <polygon points="775,326 730,460 840,460" fill="url(#downlightCone)" opacity="0.65"/>
+    <polygon points="915,319 865,460 985,460" fill="url(#downlightCone)" opacity="0.65"/>
+
+    <rect x="490" y="340" width="370" height="150" fill="url(#warmInteriorGlow)" filter="url(#softGlow)"/>
+    <rect x="880" y="325" width="280" height="155" fill="url(#warmInteriorAmber)" filter="url(#softGlow)"/>
+
+    <rect x="475" y="330" width="16" height="165" fill="#081827"/>
+    <rect x="580" y="335" width="8" height="155" fill="#091929"/>
+    <rect x="690" y="330" width="8" height="160" fill="#091929"/>
+    <rect x="800" y="325" width="8" height="165" fill="#091929"/>
+    <rect x="870" y="320" width="18" height="170" fill="#081827"/>
+    <rect x="990" y="315" width="8" height="175" fill="#091929"/>
+    <rect x="1100" y="310" width="8" height="180" fill="#091929"/>
+
+    <rect x="410" y="325" width="65" height="175" fill="url(#woodPanels)"/>
+    <line x1="422" y1="325" x2="422" y2="500" stroke="#000" stroke-width="1.5" opacity="0.5"/>
+    <line x1="435" y1="325" x2="435" y2="500" stroke="#000" stroke-width="1.5" opacity="0.5"/>
+    <line x1="448" y1="325" x2="448" y2="500" stroke="#000" stroke-width="1.5" opacity="0.5"/>
+    <line x1="461" y1="325" x2="461" y2="500" stroke="#000" stroke-width="1.5" opacity="0.5"/>
+  </g>
+
+  <!-- Paved Driveway & Terrace -->
+  <polygon points="320,500 1200,470 1200,675 220,675" fill="#050e18"/>
+  <polygon points="380,490 1200,465 1200,520 350,535" fill="#0a1a2c" opacity="0.8"/>
+
+  <ellipse cx="680" cy="510" rx="220" ry="25" fill="#f59e0b" opacity="0.22" filter="url(#bloomWide)"/>
+  <ellipse cx="940" cy="500" rx="180" ry="22" fill="#f59e0b" opacity="0.18" filter="url(#bloomWide)"/>
+
+  <!-- Shrubbery & Uplights -->
+  <path d="M 380 500 Q 405 460 430 475 Q 460 450 490 480 Q 520 460 550 500 Z" fill="#040c14"/>
+  <path d="M 850 490 Q 880 445 915 460 Q 945 440 970 470 Q 1000 450 1030 490 Z" fill="#040c14"/>
+  <circle cx="430" cy="490" r="3.5" fill="#fef08a"/>
+  <circle cx="540" cy="495" r="3.5" fill="#fef08a"/>
+  <circle cx="870" cy="485" r="3.5" fill="#fef08a"/>
+  <circle cx="980" cy="480" r="3.5" fill="#fef08a"/>
+  <ellipse cx="430" cy="490" rx="14" ry="10" fill="#f59e0b" opacity="0.4" filter="url(#softGlow)"/>
+  <ellipse cx="540" cy="495" rx="14" ry="10" fill="#f59e0b" opacity="0.4" filter="url(#softGlow)"/>
+  <ellipse cx="870" cy="485" rx="14" ry="10" fill="#f59e0b" opacity="0.4" filter="url(#softGlow)"/>
+  <ellipse cx="980" cy="480" rx="14" ry="10" fill="#f59e0b" opacity="0.4" filter="url(#softGlow)"/>
+
+  <!-- Left-Edge Seamless Fade to Midnight Navy -->
+  <rect x="0" y="0" width="600" height="675" fill="url(#fadeToNavy)"/>
+  <defs>
+    <linearGradient id="fadeToNavy" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#061321" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#061321" stop-opacity="0.95"/>
+      <stop offset="85%" stop-color="#061321" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#061321" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+</svg>

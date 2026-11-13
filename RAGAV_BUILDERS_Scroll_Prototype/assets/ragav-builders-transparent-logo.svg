@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="100%" height="100%" role="img" aria-label="RAGAV BUILDERS — YOUR DREAM OUR EXPERTISE">
+  <defs>
+    <!-- Chrome / Metallic Gradients -->
+    <linearGradient id="chromeBase" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="22%" stop-color="#e2e8f0"/>
+      <stop offset="48%" stop-color="#94a3b8"/>
+      <stop offset="72%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+
+    <linearGradient id="chromeBevel" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#64748b" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#1e293b" stop-opacity="0.9"/>
+    </linearGradient>
+
+    <linearGradient id="chromeStroke" x1="0%" y1="0%" x2="100%" y2="80%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="40%" stop-color="#cbd5e1"/>
+      <stop offset="70%" stop-color="#475569"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </linearGradient>
+
+    <!-- Radiant Gold Swoosh Gradient -->
+    <linearGradient id="goldSwoosh" x1="0%" y1="0%" x2="100%" y2="60%">
+      <stop offset="0%" stop-color="#b45309"/>
+      <stop offset="25%" stop-color="#f59e0b"/>
+      <stop offset="55%" stop-color="#fef08a"/>
+      <stop offset="80%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+
+    <!-- Warm Golden Window Panes -->
+    <linearGradient id="goldWindow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffbeb"/>
+      <stop offset="40%" stop-color="#fbbf24"/>
+      <stop offset="85%" stop-color="#d97706"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+
+    <!-- Tapered Gold Spears -->
+    <linearGradient id="goldSpearL" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#d97706" stop-opacity="0.1"/>
+      <stop offset="40%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#fef08a"/>
+    </linearGradient>
+    <linearGradient id="goldSpearR" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="60%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- 3D Drop Shadow -->
+    <filter id="shadow3D" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000000" flood-opacity="0.55"/>
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- 1. UPPER GOLDEN SWOOSH ARC (Behind Monogram) -->
+  <path d="M 390 185 C 410 110, 480 50, 605 52 C 665 54, 715 75, 718 80 C 710 82, 660 68, 600 68 C 490 68, 425 125, 400 188 Z"
+        fill="url(#goldSwoosh)" filter="url(#shadow3D)"/>
+
+  <!-- 2. ARCHITECTURAL RB MONOGRAM (Metallic Chrome 3D) -->
+  <g filter="url(#shadow3D)">
+    <!-- LEFT 'R' EMBLEM & INTEGRATED FIRST ROOFLINE -->
+    <!-- R Left Vertical Pillar -->
+    <path d="M 302 188 L 348 188 L 348 335 L 302 335 Z" fill="url(#chromeBase)" stroke="url(#chromeStroke)" stroke-width="2"/>
+    <!-- R Upper Bowl -->
+    <path d="M 346 188 L 455 188 C 495 188, 510 215, 510 248 C 510 282, 485 305, 442 305 L 346 305 Z 
+             M 348 220 L 348 274 L 435 274 C 458 274, 468 262, 468 248 C 468 232, 458 220, 435 220 Z" 
+          fill="url(#chromeBase)" stroke="url(#chromeStroke)" stroke-width="2" fill-rule="evenodd"/>
+
+    <!-- Left Gable Peak Roofline (Forms R's diagonal foot & roof over windows) -->
+    <path d="M 302 305 L 388 208 L 474 305 L 442 305 L 388 244 L 334 305 Z" 
+          fill="url(#chromeBase)" stroke="url(#chromeStroke)" stroke-width="2"/>
+
+    <!-- Right Gable Peak Roofline (Interlocks into the B) -->
+    <path d="M 440 305 L 512 216 L 588 305 L 556 305 L 512 252 L 468 305 Z" 
+          fill="url(#chromeBase)" stroke="url(#chromeStroke)" stroke-width="2"/>
+
+    <!-- RIGHT 'B' EMBLEM -->
+    <!-- B Main Monogram Structure -->
+    <path d="M 518 188 L 650 188 C 695 188, 715 210, 715 240 C 715 264, 698 280, 672 288 C 708 296, 725 318, 725 352 C 725 395, 690 422, 630 422 L 518 422 L 518 376 L 620 376 C 655 376, 674 362, 674 346 C 674 326, 650 312, 615 312 L 565 312 L 565 274 L 625 274 C 655 274, 668 262, 668 244 C 668 226, 652 220, 625 220 L 518 220 Z" 
+          fill="url(#chromeBase)" stroke="url(#chromeStroke)" stroke-width="2"/>
+    
+    <!-- Bevel highlight lines -->
+    <path d="M 302 188 L 348 188 L 455 188 C 495 188, 510 215, 510 248" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+    <path d="M 518 188 L 650 188 C 695 188, 715 210, 715 240" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+  </g>
+
+  <!-- 3. FOUR GOLDEN WINDOW SQUARES (2x2 Grid under left roofline) -->
+  <g filter="url(#shadow3D)">
+    <!-- Top-Left Pane -->
+    <rect x="368" y="278" width="19" height="19" rx="2" fill="url(#goldWindow)" stroke="#78350f" stroke-width="1.2"/>
+    <!-- Top-Right Pane -->
+    <rect x="392" y="278" width="19" height="19" rx="2" fill="url(#goldWindow)" stroke="#78350f" stroke-width="1.2"/>
+    <!-- Bottom-Left Pane -->
+    <rect x="368" y="302" width="19" height="19" rx="2" fill="url(#goldWindow)" stroke="#78350f" stroke-width="1.2"/>
+    <!-- Bottom-Right Pane -->
+    <rect x="392" y="302" width="19" height="19" rx="2" fill="url(#goldWindow)" stroke="#78350f" stroke-width="1.2"/>
+  </g>
+
+  <!-- 4. LOWER GOLDEN SWOOSH ARC (Sweeping under Monogram) -->
+  <path d="M 352 355 C 440 372, 540 365, 608 328 C 598 335, 532 355, 450 350 C 400 348, 368 344, 352 355 Z"
+        fill="url(#goldSwoosh)" filter="url(#shadow3D)"/>
+
+  <!-- 5. "RAGAV BUILDERS" 3D CHROME TYPOGRAPHY -->
+  <g filter="url(#shadow3D)">
+    <text x="500" y="420" 
+          font-family="'Cinzel', 'Times New Roman', Times, serif" 
+          font-size="62" 
+          font-weight="800" 
+          letter-spacing="5" 
+          text-anchor="middle" 
+          fill="url(#chromeBase)" 
+          stroke="url(#chromeStroke)" 
+          stroke-width="1.2">RAGAV BUILDERS</text>
+  </g>
+
+  <!-- 6. TAGLINE & GOLDEN SPEAR DIVIDERS -->
+  <g filter="url(#shadow3D)">
+    <!-- Left Spearhead -->
+    <polygon points="90,463 178,460 178,466" fill="url(#goldSpearL)"/>
+    <!-- Tagline Text -->
+    <text x="500" y="468" 
+          font-family="'Cinzel', 'Times New Roman', Times, serif" 
+          font-size="20" 
+          font-weight="700" 
+          letter-spacing="6" 
+          text-anchor="middle" 
+          fill="#cbd5e1">YOUR DREAM OUR EXPERTISE</text>
+    <!-- Right Spearhead -->
+    <polygon points="910,463 822,460 822,466" fill="url(#goldSpearR)"/>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+{
+  "name": "ragav-builders",
+  "version": "1.0.0",
+  "description": "Ragav Builders - Full-Page Cinematic Architectural Website",
+  "main": "RAGAV_BUILDERS_Scroll_Prototype/index.html",
+  "dependencies": {
+    "@supabase/ssr": "^0.5.2",
+    "@supabase/supabase-js": "^2.48.1"
+  },
+  "scripts": {
+    "sync": "node sync.js",
+    "prestart": "node sync.js",
+    "predev": "node sync.js",
+    "extract": "cd RAGAV_BUILDERS_Scroll_Prototype && node extract_frames.js",
+    "extract:py": "cd RAGAV_BUILDERS_Scroll_Prototype && python extract_frames.py",
+    "dev": "npm run sync & start http://localhost:3000 & npx --yes serve RAGAV_BUILDERS_Scroll_Prototype -l 3000",
+    "start": "npm run sync & start http://localhost:3000 & npx --yes serve RAGAV_BUILDERS_Scroll_Prototype -l 3000",
+    "serve": "npx --yes serve RAGAV_BUILDERS_Scroll_Prototype -l 3000",
+    "open": "start RAGAV_BUILDERS_Scroll_Prototype/index.html"
+  },
+  "keywords": [
+    "ragav-builders",
+    "construction",
+    "architecture",
+    "vastu",
+    "waterproofing"
+  ],
+  "author": "Ragav Builders",
+  "license": "ISC"
+}

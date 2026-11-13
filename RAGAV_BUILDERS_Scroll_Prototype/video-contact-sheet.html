@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RAGAV BUILDERS — Background Video Contact Sheet</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      background: #061426;
+      color: #eef4fa;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 32px 24px 56px;
+    }
+
+    h1 { margin: 0 0 8px; font-size: clamp(24px, 4vw, 36px); }
+    p { margin: 0; color: #bdc9d6; line-height: 1.6; }
+
+    .metadata {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 24px;
+      margin: 20px 0 24px;
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 12px;
+      background: rgba(255,255,255,.05);
+    }
+
+    #status { color: #ffb264; }
+
+    .contact-sheet {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+      gap: 12px;
+    }
+
+    .mapping {
+      width: 100%;
+      margin: 28px 0;
+      border-collapse: collapse;
+      background: rgba(255,255,255,.035);
+    }
+
+    .mapping th,
+    .mapping td {
+      padding: 11px 12px;
+      border: 1px solid rgba(255,255,255,.14);
+      text-align: left;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    .mapping th { color: #ffb264; }
+    .mapping td { color: #d7e1eb; }
+
+    figure {
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 10px;
+      background: rgba(255,255,255,.04);
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #0b1c2d;
+    }
+
+    figcaption {
+      padding: 9px 11px;
+      color: #e2eaf2;
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+    }
+
+    video { display: none; }
+
+    @media (max-width: 600px) {
+      body { padding: 22px 14px 40px; }
+      .contact-sheet { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+      figcaption { padding: 7px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Background Video Scene Audit</h1>
+  <p>Decoded samples from the original shared background video, shown every 12 frames (0.5 seconds).</p>
+  <div class="metadata" aria-live="polite">
+    <span id="duration">Duration: reading metadata…</span>
+    <span id="frame-rate">Frame rate: 24 fps</span>
+    <span id="frame-count">Frames: reading metadata…</span>
+    <span id="status">Extracting representative frames…</span>
+  </div>
+  <main class="contact-sheet" id="contactSheet" aria-label="Video contact sheet"></main>
+  <h2>Service Scene Mapping</h2>
+  <div style="overflow-x:auto">
+    <table class="mapping">
+      <thead>
+        <tr><th>Service</th><th>Frames</th><th>Time range</th><th>Scroll range</th><th>Decoded scene / coverage note</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>01 · 2D Vastu Floor Planning</td><td>108–158</td><td>4.500–6.583s</td><td>0–100% of service story</td><td>Site survey and plot-layout marking; no Vastu-specific visual.</td></tr>
+        <tr><td>02 · 3D Architectural Elevations</td><td>216–246</td><td>9.000–10.250s</td><td>0–100% of service story</td><td>Architectural wireframe transition and rendered exterior elevation.</td></tr>
+        <tr><td>03 · Interior Design</td><td>60–95</td><td>2.500–3.958s</td><td>0–100% of service story</td><td>Interior entry and living-space reveal.</td></tr>
+        <tr><td>04 · Building Construction</td><td>247–356</td><td>10.292–14.833s</td><td>0–100% of service story</td><td>Transition into construction machinery, structural work and masonry; the original sequence continues without dropping the scene-entry frames.</td></tr>
+        <tr><td>05 · Blueprint &amp; Building Approval</td><td>159–215</td><td>6.625–8.958s</td><td>0–100% of service story</td><td>CAD floor-plan drawing on screen; no approval paperwork is shown.</td></tr>
+        <tr><td>06 · Waterproofing Solutions</td><td>0–248</td><td>0.000–9.920s</td><td>0–100% of service story</td><td>Representative stock clip: a worker applies roof-protective coating. 25 fps; Pexels video by Bedrijfsfilmspecialist.nl. This is not RAGAV BUILDERS project footage.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Frame numbers are zero-based. Services 01–05 use the original 24 fps video and seek to relevant source scenes at service boundaries. Service 06 uses a separate 25 fps Pexels stock clip because the original video contains no waterproofing footage. <a href="https://www.pexels.com/video/coating-a-concrete-roof-with-spray-paint-2887457/">View the stock clip and its Pexels license</a>; it is clearly identified as representative footage, not a RAGAV BUILDERS project.</p>
+  <video id="sourceVideo" muted playsinline preload="auto">
+    <source src="assets/bgvideo_clean.mp4" type="video/mp4">
+  </video>
+  <script>
+    (() => {
+      const frameRate = 24;
+      const video = document.getElementById('sourceVideo');
+      const sheet = document.getElementById('contactSheet');
+      const status = document.getElementById('status');
+      const formatTime = seconds => {
+        const wholeSeconds = Math.floor(seconds);
+        const milliseconds = Math.round((seconds - wholeSeconds) * 1000);
+        return `${String(Math.floor(wholeSeconds / 60)).padStart(2, '0')}:${String(wholeSeconds % 60).padStart(2, '0')}.${String(milliseconds).padStart(3, '0')}`;
+      };
+
+      function seekTo(time) {
+        if (Math.abs(video.currentTime - time) < 0.001) return Promise.resolve();
+        return new Promise((resolve, reject) => {
+          const timeout = window.setTimeout(() => {
+            video.removeEventListener('seeked', onSeeked);
+            reject(new Error(`Timed out while seeking to ${time.toFixed(3)}s.`));
+          }, 10000);
+          const onSeeked = () => {
+            window.clearTimeout(timeout);
+            resolve();
+          };
+          video.addEventListener('seeked', onSeeked, { once: true });
+          video.currentTime = time;
+        });
+      }
+
+      async function renderContactSheet() {
+        const frameCount = Math.round(video.duration * frameRate);
+        document.getElementById('duration').textContent = `Duration: ${video.duration.toFixed(3)} seconds`;
+        document.getElementById('frame-count').textContent = `Frames: ${frameCount}`;
+        const sampleFrames = new Set();
+        for (let frame = 0; frame < frameCount; frame += 12) sampleFrames.add(frame);
+        [60, 95, 108, 158, 159, 215, 216, 246, 252, 356].forEach(frame => {
+          if (frame < frameCount) sampleFrames.add(frame);
+        });
+        if (frameCount > 0) sampleFrames.add(frameCount - 1);
+        const orderedFrames = Array.from(sampleFrames).sort((a, b) => a - b);
+
+        for (let i = 0; i < orderedFrames.length; i++) {
+          const frame = orderedFrames[i];
+          const time = frame / frameRate;
+          const figure = document.createElement('figure');
+          const canvas = document.createElement('canvas');
+          const caption = document.createElement('figcaption');
+          canvas.width = 640;
+          canvas.height = 360;
+          caption.textContent = `Frame ${String(frame).padStart(3, '0')} · ${formatTime(time)}s`;
+          figure.append(canvas, caption);
+          sheet.appendChild(figure);
+
+          await seekTo(time);
+          const context = canvas.getContext('2d');
+          context.drawImage(video, 0, 0, canvas.width, canvas.height);
+          status.textContent = `Extracted ${i + 1} of ${orderedFrames.length} samples`;
+        }
+
+        status.textContent = 'Contact sheet ready';
+      }
+
+      video.addEventListener('loadedmetadata', () => {
+        renderContactSheet().catch(error => {
+          status.textContent = error.message;
+          status.style.color = '#ff8b8b';
+        });
+      }, { once: true });
+      video.addEventListener('error', () => {
+        status.textContent = 'The source MP4 could not be decoded.';
+        status.style.color = '#ff8b8b';
+      }, { once: true });
+    })();
+  </script>
+</body>
+</html>

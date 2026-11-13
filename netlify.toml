@@ -1,0 +1,7 @@
+[build]
+  publish = "RAGAV_BUILDERS_Scroll_Prototype"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

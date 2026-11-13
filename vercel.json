@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/RAGAV_BUILDERS_Scroll_Prototype/index.html" },
+    { "source": "/(.*)", "destination": "/RAGAV_BUILDERS_Scroll_Prototype/$1" }
+  ]
+}
