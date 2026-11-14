@@ -40,7 +40,7 @@ git branch -M main
 
 echo [5/5] Staging all files and pushing live to GitHub...
 git add -A
-git commit -m "Mobile: Comprehensive mobile-only responsive optimization (<=767px) preserving 100% desktop website"
+git commit -m "Mobile: Rebuild single-column footer layout, fix mobile header visibility, and sync drawer buttons"
 echo.
 git push -u origin main --force
 

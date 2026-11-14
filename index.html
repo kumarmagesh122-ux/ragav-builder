@@ -2795,6 +2795,12 @@
       background: linear-gradient(135deg, #ff9a38 0%, #f28a24 100%);
     }
 
+    /* Mobile Nav Drawer Action Buttons - Hidden by default on Desktop */
+    .mobile-nav-calc-btn,
+    .mobile-nav-quote-btn {
+      display: none !important;
+    }
+
     /* ============================================================
        RESPONSIVE BREAKPOINTS
        ============================================================ */
@@ -2861,7 +2867,9 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
+    }
 
+    @media (min-width: 768px) and (max-width: 980px) {
       .footer-brand-logo {
         width: 250px;
       }
@@ -2916,54 +2924,71 @@
 
       /* 1. Header & Mobile Navigation */
       .site-header {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        max-width: 100vw !important;
         height: 64px !important;
+        min-height: 64px !important;
         padding: 0 16px !important;
+        box-sizing: border-box !important;
         display: flex !important;
         justify-content: space-between !important;
         align-items: center !important;
+        background: rgba(4, 16, 28, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6) !important;
+        z-index: 99999 !important;
       }
 
       .header-brand {
-        display: inline-flex;
-        align-items: center;
+        display: inline-flex !important;
+        align-items: center !important;
+        flex-shrink: 0 !important;
+        line-height: 0 !important;
       }
 
       .header-chrome-logo {
-        height: 38px !important;
-        max-width: 155px !important;
-        width: auto;
+        height: 40px !important;
+        max-width: 165px !important;
+        width: auto !important;
+        object-fit: contain !important;
+        display: block !important;
       }
 
       .header-actions {
-        gap: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        gap: 0 !important;
+        flex-shrink: 0 !important;
       }
 
-      .header-phone-btn {
-        display: none !important;
-      }
-
+      .header-phone-btn,
+      .btn-calc-nav,
       .header-actions > .btn-primary {
         display: none !important;
       }
 
-      .btn-calc-nav {
-        height: 36px !important;
-        min-width: auto !important;
-        max-width: none !important;
-        padding: 0 10px !important;
-        font-size: 11px !important;
-        gap: 5px !important;
-        border-radius: 8px !important;
-      }
-
       .menu-btn {
         display: flex !important;
-        width: 38px !important;
-        height: 38px !important;
-        border-radius: 8px !important;
-        font-size: 20px !important;
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+        border-radius: 10px !important;
+        background: rgba(255, 255, 255, 0.08) !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        color: #ffffff !important;
+        font-size: 24px !important;
         align-items: center !important;
         justify-content: center !important;
+        cursor: pointer !important;
+        flex-shrink: 0 !important;
       }
 
       /* Responsive Mobile Drawer Navigation */
@@ -2977,7 +3002,7 @@
         width: 100vw !important;
         height: calc(100vh - 64px) !important;
         height: calc(100dvh - 64px) !important;
-        padding: 24px 20px 40px !important;
+        padding: 20px 16px 36px !important;
         background: rgba(3, 13, 24, 0.98) !important;
         backdrop-filter: blur(24px) !important;
         -webkit-backdrop-filter: blur(24px) !important;
@@ -2985,10 +3010,10 @@
         flex-direction: column !important;
         align-items: stretch !important;
         justify-content: flex-start !important;
-        gap: 10px !important;
+        gap: 8px !important;
         overflow-y: auto !important;
         -webkit-overflow-scrolling: touch !important;
-        z-index: 9999 !important;
+        z-index: 99999 !important;
       }
 
       .site-nav.open {
@@ -2999,15 +3024,15 @@
         display: flex !important;
         align-items: center !important;
         justify-content: space-between !important;
-        padding: 13px 16px !important;
-        font-size: 14.5px !important;
+        padding: 12px 16px !important;
+        font-size: 14px !important;
         font-weight: 700 !important;
         letter-spacing: 0.08em !important;
         color: #e2e8f0 !important;
         background: rgba(255, 255, 255, 0.04) !important;
         border: 1px solid rgba(255, 255, 255, 0.08) !important;
         border-radius: 10px !important;
-        min-height: 48px;
+        min-height: 44px;
         transition: all 0.2s ease !important;
       }
 
@@ -3022,10 +3047,54 @@
         display: none !important;
       }
 
+      .mobile-nav-calc-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        border-radius: 10px !important;
+        background: linear-gradient(145deg, #FFD66B 0%, #F59E0B 48%, #E89A08 100%) !important;
+        color: #10243A !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
+        border: 1px solid rgba(255, 214, 107, 0.75) !important;
+        margin-top: 8px !important;
+        box-shadow: 0 4px 14px rgba(245, 158, 11, 0.25) !important;
+        cursor: pointer !important;
+        box-sizing: border-box !important;
+      }
+
+      .mobile-nav-calc-btn svg {
+        stroke: #10243A !important;
+      }
+
+      .mobile-nav-quote-btn {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+        min-height: 46px !important;
+        border-radius: 10px !important;
+        background: linear-gradient(135deg, #f28a24 0%, #e07412 100%) !important;
+        color: #0b151e !important;
+        font-size: 13px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.08em !important;
+        text-transform: uppercase !important;
+        border: 1px solid rgba(255, 138, 29, 0.75) !important;
+        box-shadow: 0 4px 14px rgba(242, 138, 36, 0.35) !important;
+        text-decoration: none !important;
+        box-sizing: border-box !important;
+      }
+
       /* 2. Hero Section */
       .hero-section {
         min-height: auto !important;
-        padding-top: 86px !important;
+        padding-top: 90px !important;
         padding-bottom: 44px !important;
         padding-left: 16px !important;
         padding-right: 16px !important;
@@ -3374,90 +3443,342 @@
         font-size: clamp(28px, 7vw, 36px) !important;
       }
 
-      /* 11. Footer Section (Single-Column Vertical Layout) */
+      /* ============================================================
+         CRITICAL FIX: MOBILE FOOTER REBUILD (max-width: 767px)
+         Forces 100% single vertical column.
+         Order: Brand -> Address -> Core Services -> Direct Contact -> Social -> Divider -> Copyright -> Dev Credit
+         ============================================================ */
       .footer {
-        padding: 40px 0 20px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 40px 0 24px !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important;
       }
 
       .footer-inner {
+        width: 100% !important;
+        max-width: 100% !important;
         padding: 0 16px !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
       }
 
       .footer-top-left-arch,
       .footer-bottom-left-lines,
-      .curved-wing {
+      .curved-wing,
+      .header-vert-divider {
         display: none !important;
       }
 
       .footer-villa-frame {
         width: 100% !important;
-        opacity: 0.16 !important;
+        opacity: 0.14 !important;
+        pointer-events: none !important;
       }
 
       .footer-villa-img {
         object-position: center bottom !important;
       }
 
+      /* 1. Logo & Brand Information */
       .footer-header-row {
+        display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 16px !important;
-        padding-bottom: 22px !important;
+        padding-bottom: 24px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
       }
 
       .footer-brand-side {
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 12px !important;
-      }
-
-      .header-vert-divider {
-        display: none !important;
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
       }
 
       .footer-brand-logo {
-        width: 210px !important;
+        width: auto !important;
+        max-width: 210px !important;
+        height: auto !important;
+        object-fit: contain !important;
       }
 
       .footer-location-pill {
         width: 100% !important;
-        justify-content: center !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        gap: 10px !important;
+        padding: 10px 16px !important;
         font-size: 12px !important;
-        padding: 9px 16px !important;
+        border-radius: 40px !important;
       }
 
+      .footer-location-pill .pill-text {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        word-break: break-word !important;
+      }
+
+      /* 2. Parent Container Override: Strict 1-Column Flex Stack */
       .footer-columns {
-        grid-template-columns: 1fr !important;
-        gap: 28px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        gap: 32px !important;
         margin-bottom: 24px !important;
+        box-sizing: border-box !important;
       }
 
-      .footer-col-about {
-        margin-bottom: 0 !important;
-      }
-
+      .footer-col,
+      .footer-col-about,
       .footer-col-services,
       .footer-col-contact {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        flex: 0 0 100% !important;
+        box-sizing: border-box !important;
         border-left: none !important;
+        border-top: none !important;
         padding-left: 0 !important;
-        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-        padding-top: 22px !important;
+        padding-right: 0 !important;
+        margin: 0 !important;
+      }
+
+      /* Address Card inside Col 1 */
+      .footer-about-text {
+        max-width: 100% !important;
+        font-size: 13.5px !important;
+        line-height: 1.65 !important;
+        margin-bottom: 18px !important;
+      }
+
+      .footer-address-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        padding: 12px 16px !important;
+        border-radius: 14px !important;
+      }
+
+      .address-icon-bubble {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        border-radius: 50% !important;
+        flex-shrink: 0 !important;
+      }
+
+      .address-text-wrap {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        word-break: break-word !important;
+      }
+
+      .address-text-wrap strong {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        display: block !important;
+      }
+
+      .address-text-wrap span {
+        font-size: 12px !important;
+        line-height: 1.4 !important;
+        display: block !important;
+      }
+
+      /* 3. Core Services – Heading & Balanced 2-Column Grid */
+      .services-heading-row {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 10px !important;
+        margin-bottom: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .services-view-all-btn {
+        padding: 5px 12px !important;
+        font-size: 11px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
       }
 
       .footer-services-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .service-glass-card {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
         gap: 8px !important;
+        padding: 14px 8px !important;
+        min-height: 92px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        border-radius: 12px !important;
+      }
+
+      .service-glass-card .service-card-icon {
+        width: 24px !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+        display: block !important;
+        margin: 0 auto !important;
+      }
+
+      .service-glass-card .service-card-title {
+        font-size: 12px !important;
+        line-height: 1.35 !important;
+        text-align: center !important;
+        display: block !important;
+        width: 100% !important;
+        word-break: normal !important;
+      }
+
+      /* 4. Direct Contact – Full Width Two-Part Horizontal Layout */
+      .footer-col-contact {
+        border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+        padding-top: 24px !important;
+        width: 100% !important;
+      }
+
+      .footer-contact-capsules {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 10px !important;
+        padding: 0 !important;
+        margin: 0 0 20px 0 !important;
+        list-style: none !important;
+        box-sizing: border-box !important;
+      }
+
+      .footer-contact-capsules li {
+        width: 100% !important;
+        display: block !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+
+      .contact-capsule-link,
+      .contact-capsule-static {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 14px !important;
+        padding: 10px 16px !important;
+        border-radius: 40px !important;
+        min-width: 0 !important;
+      }
+
+      .capsule-icon-bubble {
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        border-radius: 50% !important;
+        flex-shrink: 0 !important;
+      }
+
+      .capsule-text {
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+        word-break: break-word !important;
+        overflow-wrap: anywhere !important;
+      }
+
+      /* 5. Social Icons */
+      .footer-social-row {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 14px !important;
+        flex-wrap: wrap !important;
+        margin: 10px auto 0 !important;
+        width: 100% !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      .social-circle-btn {
+        width: 42px !important;
+        height: 42px !important;
+        min-width: 42px !important;
+        min-height: 42px !important;
+        border-radius: 50% !important;
+        flex-shrink: 0 !important;
+      }
+
+      /* 6. Copyright & Bottom Section */
+      .footer-bottom-wrap {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-top: 18px !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+      }
+
+      .footer-curved-divider-wrap {
+        width: 100% !important;
+        height: 32px !important;
+        overflow: hidden !important;
+      }
+
+      .footer-curved-divider-svg {
+        width: 100% !important;
+        height: 100% !important;
+        display: block !important;
       }
 
       .footer-copyright-block {
-        padding: 10px 16px 16px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 16px 16px 24px !important;
+        box-sizing: border-box !important;
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 8px !important;
+        position: static !important;
       }
 
       .footer-copyright-line {
-        flex-wrap: wrap !important;
+        display: flex !important;
+        align-items: center !important;
         justify-content: center !important;
         text-align: center !important;
-        gap: 6px !important;
+        gap: 8px !important;
+        margin-bottom: 2px !important;
+        flex-wrap: wrap !important;
+        width: 100% !important;
       }
 
       .copyright-accent-line {
@@ -3465,15 +3786,36 @@
       }
 
       .copyright-main-text {
-        font-size: 12px !important;
+        font-size: 12.5px !important;
+        line-height: 1.5 !important;
         text-align: center !important;
+        color: #E2E8F0 !important;
+        width: 100% !important;
+      }
+
+      .footer-brand-statement {
+        font-size: 11px !important;
+        color: #94A3B8 !important;
+        line-height: 1.4 !important;
+        text-align: center !important;
+        margin: 0 !important;
+        width: 100% !important;
       }
 
       .footer-developer-credit {
         position: static !important;
-        margin: 12px auto 0 !important;
+        margin: 8px auto 0 !important;
         display: inline-flex !important;
-        font-size: 9px !important;
+        align-items: center !important;
+        justify-content: center !important;
+        text-align: center !important;
+        font-size: 9.5px !important;
+        padding: 4px 10px !important;
+        border-radius: 12px !important;
+        background: rgba(10, 22, 36, 0.65) !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        white-space: normal !important;
+        max-width: 100% !important;
       }
 
       /* 12. Background Video Canvas Adaptation */
@@ -3506,24 +3848,18 @@
       }
 
       .header-chrome-logo {
-        height: 34px !important;
-        max-width: 135px !important;
-      }
-
-      .btn-calc-nav {
-        height: 34px !important;
-        padding: 0 8px !important;
-        font-size: 10px !important;
+        height: 36px !important;
+        max-width: 145px !important;
       }
 
       .menu-btn {
-        width: 36px !important;
-        height: 36px !important;
-        font-size: 18px !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 22px !important;
       }
 
       .hero-section {
-        padding-top: 76px !important;
+        padding-top: 80px !important;
         padding-bottom: 36px !important;
       }
 
@@ -3540,27 +3876,25 @@
       }
 
       .footer-services-grid {
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 6px !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
       }
 
       .service-glass-card {
-        padding: 10px 6px !important;
-        min-height: 76px !important;
+        padding: 12px 6px !important;
+        min-height: 86px !important;
+      }
+
+      .service-glass-card .service-card-title {
         font-size: 11px !important;
       }
     }
 
     /* Sub-query: Extra Narrow Mobile (< 360px) */
     @media screen and (max-width: 360px) {
-      .btn-calc-nav span {
-        display: none !important;
-      }
-
-      .btn-calc-nav {
-        width: 34px !important;
-        padding: 0 !important;
-        justify-content: center !important;
+      .header-chrome-logo {
+        height: 32px !important;
+        max-width: 130px !important;
       }
 
       .hero-strengths {
@@ -3569,6 +3903,30 @@
 
       .metrics-grid {
         grid-template-columns: 1fr !important;
+      }
+
+      .footer-services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 6px !important;
+      }
+
+      .service-glass-card {
+        padding: 10px 4px !important;
+        min-height: 80px !important;
+      }
+
+      .service-glass-card .service-card-title {
+        font-size: 10.5px !important;
+      }
+
+      .contact-capsule-link,
+      .contact-capsule-static {
+        padding: 8px 12px !important;
+        gap: 10px !important;
+      }
+
+      .capsule-text {
+        font-size: 12px !important;
       }
     }
   </style>
@@ -3645,6 +4003,11 @@
       <a href="#credentials">Trust</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <button type="button" class="mobile-nav-calc-btn" id="mobileNavCalcBtn" aria-label="Open Construction Cost Estimator">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2" /><line x1="8" y1="6" x2="16" y2="6" /><line x1="16" y1="14" x2="16" y2="18" /><path d="M16 10h.01M12 10h.01M8 10h.01M12 14h.01M8 14h.01M12 18h.01M8 18h.01" /></svg>
+        <span>Cost Estimator</span>
+      </button>
+      <a href="#contact" class="mobile-nav-quote-btn">Get a Quote ↗</a>
     </nav>
 
     <div class="header-actions">
@@ -5479,6 +5842,15 @@
       if (openCalcHeroBtn) openCalcHeroBtn.addEventListener('click', openCalculator);
       if (openCalcServicesBtn) openCalcServicesBtn.addEventListener('click', openCalculator);
       if (closeCalcBtn) closeCalcBtn.addEventListener('click', closeCalculator);
+
+      const mobileNavCalcBtn = document.getElementById('mobileNavCalcBtn');
+      if (mobileNavCalcBtn) {
+        mobileNavCalcBtn.addEventListener('click', () => {
+          if (siteNav) siteNav.classList.remove('open');
+          if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+          openCalculator();
+        });
+      }
 
       if (calcModal) {
         calcModal.addEventListener('click', (e) => {
