@@ -40,7 +40,7 @@ git branch -M main
 
 echo [5/5] Staging all files and pushing live to GitHub...
 git add -A
-git commit -m "SEO: Add Google Search Console assets, sitemap.xml, robots.txt, Schema.org LocalBusiness, FAQ section & keyword optimizations"
+git commit -m "Mobile: Comprehensive mobile-only responsive optimization (<=767px) preserving 100% desktop website"
 echo.
 git push -u origin main --force
 
